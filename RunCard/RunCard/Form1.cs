@@ -22,9 +22,7 @@ namespace RunCard
         {
             //SearchAddress();
             //List<AddressModel> stations = DataAccess.GetAllLocations();
-            _stationsgb = DataAccess.GetAllLocations();
-            LocationsGrid.DataSource = _stationsgb;
-            ItemsNumber.Text = _stationsgb.Count.ToString();
+            ResetGrid();
 
             CenterTopControl(Header);
             CenterBottomControl(Footer);
@@ -32,6 +30,15 @@ namespace RunCard
             CenterControlHorizontal(SearchPanel);
 
         }
+
+        private void ResetGrid()
+        {
+            _stationsgb = DataAccess.GetAllLocations();
+            LocationsGrid.DataSource = _stationsgb;
+            ItemsNumber.Text = _stationsgb.Count.ToString();
+
+        }
+
 
         private void Runcard_Resize(object sender, EventArgs e)
         {
@@ -109,6 +116,14 @@ namespace RunCard
         {
             ctrlToCenter.Left = (ctrlToCenter.Parent.Width - ctrlToCenter.Width) / 2;
             ctrlToCenter.Top = (ctrlToCenter.Parent.Height - ctrlToCenter.Height) -45;
+        }
+
+        private void ClearBoxes_Click(object sender, EventArgs e)
+        {
+            NumberTextBox.Clear();
+            StreetTextBox.Clear();
+
+
         }
     }
 }

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using Dapper;
 
@@ -16,9 +18,9 @@ namespace RunCard.Classes
 
 
             // List<AddressModel> stations = new List<AddressModel>();
+            string conn = LoadConnectionString();
 
-
-            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            using (IDbConnection cnn = new SQLiteConnection(conn))
             {
                 try
                 {
@@ -47,7 +49,16 @@ namespace RunCard.Classes
         {
             try
             {
-                string connectionString = ConfigurationManager.ConnectionStrings[id].ConnectionString;
+                // string connectionString = ConfigurationManager.ConnectionStrings[id].ConnectionString;
+
+               
+
+                //string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+                string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+                string connectionString = "Data Source="+ path + "\\RuncardDB\\Locations.db; Version=3";
+
                 return connectionString;
             }
             catch (Exception ex) {

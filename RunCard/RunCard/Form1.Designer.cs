@@ -50,12 +50,13 @@
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Header = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Title = new System.Windows.Forms.Label();
-            this.SMFRLogo = new System.Windows.Forms.PictureBox();
             this.LocationsFound = new System.Windows.Forms.Label();
             this.ItemsNumber = new System.Windows.Forms.Label();
             this.Footer = new System.Windows.Forms.Panel();
+            this.SMFRLogo = new System.Windows.Forms.PictureBox();
             this.FooterText = new System.Windows.Forms.Label();
             this.ITLogobox = new System.Windows.Forms.PictureBox();
             this.addressModelBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
@@ -78,6 +79,7 @@
             this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressModelBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.SearchPanel = new System.Windows.Forms.Panel();
+            this.ClearBoxes = new System.Windows.Forms.Button();
             this.Street = new System.Windows.Forms.Label();
             this.StreetTextBox = new System.Windows.Forms.TextBox();
             this.Numberlb = new System.Windows.Forms.Label();
@@ -86,9 +88,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.addressModelBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressModelBindingSource2)).BeginInit();
             this.Header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SMFRLogo)).BeginInit();
             this.Footer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SMFRLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ITLogobox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressModelBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LocationsGrid)).BeginInit();
@@ -196,13 +199,23 @@
             // 
             this.Header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.Header.Controls.Add(this.pictureBox2);
             this.Header.Controls.Add(this.pictureBox1);
             this.Header.Controls.Add(this.Title);
-            this.Header.Controls.Add(this.SMFRLogo);
-            this.Header.Location = new System.Drawing.Point(12, 11);
+            this.Header.Location = new System.Drawing.Point(12, 20);
             this.Header.Name = "Header";
             this.Header.Size = new System.Drawing.Size(1302, 122);
             this.Header.TabIndex = 10;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(126, 122);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -220,23 +233,13 @@
             this.Title.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Title.Location = new System.Drawing.Point(300, 15);
+            this.Title.Location = new System.Drawing.Point(300, 30);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(725, 54);
             this.Title.TabIndex = 12;
             this.Title.Text = "Emergency Communications Runcard";
             this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Title.Click += new System.EventHandler(this.NumberTextBox_TextChanged);
-            // 
-            // SMFRLogo
-            // 
-            this.SMFRLogo.Image = global::RunCard.Properties.Resources.SMFRLogo;
-            this.SMFRLogo.Location = new System.Drawing.Point(0, 0);
-            this.SMFRLogo.Name = "SMFRLogo";
-            this.SMFRLogo.Size = new System.Drawing.Size(120, 120);
-            this.SMFRLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SMFRLogo.TabIndex = 11;
-            this.SMFRLogo.TabStop = false;
             // 
             // LocationsFound
             // 
@@ -260,18 +263,29 @@
             // 
             // Footer
             // 
+            this.Footer.Controls.Add(this.SMFRLogo);
             this.Footer.Controls.Add(this.FooterText);
             this.Footer.Controls.Add(this.ITLogobox);
-            this.Footer.Location = new System.Drawing.Point(232, 675);
+            this.Footer.Location = new System.Drawing.Point(232, 664);
             this.Footer.Name = "Footer";
-            this.Footer.Size = new System.Drawing.Size(904, 77);
+            this.Footer.Size = new System.Drawing.Size(904, 88);
             this.Footer.TabIndex = 14;
+            // 
+            // SMFRLogo
+            // 
+            this.SMFRLogo.Image = ((System.Drawing.Image)(resources.GetObject("SMFRLogo.Image")));
+            this.SMFRLogo.Location = new System.Drawing.Point(582, 4);
+            this.SMFRLogo.Name = "SMFRLogo";
+            this.SMFRLogo.Size = new System.Drawing.Size(91, 82);
+            this.SMFRLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SMFRLogo.TabIndex = 17;
+            this.SMFRLogo.TabStop = false;
             // 
             // FooterText
             // 
             this.FooterText.AutoSize = true;
             this.FooterText.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FooterText.Location = new System.Drawing.Point(332, 32);
+            this.FooterText.Location = new System.Drawing.Point(342, 32);
             this.FooterText.Name = "FooterText";
             this.FooterText.Size = new System.Drawing.Size(225, 19);
             this.FooterText.TabIndex = 15;
@@ -280,9 +294,9 @@
             // ITLogobox
             // 
             this.ITLogobox.Image = ((System.Drawing.Image)(resources.GetObject("ITLogobox.Image")));
-            this.ITLogobox.Location = new System.Drawing.Point(234, 3);
+            this.ITLogobox.Location = new System.Drawing.Point(220, 0);
             this.ITLogobox.Name = "ITLogobox";
-            this.ITLogobox.Size = new System.Drawing.Size(96, 73);
+            this.ITLogobox.Size = new System.Drawing.Size(112, 88);
             this.ITLogobox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ITLogobox.TabIndex = 14;
             this.ITLogobox.TabStop = false;
@@ -319,7 +333,7 @@
             this.LocationsGrid.Location = new System.Drawing.Point(31, 222);
             this.LocationsGrid.Name = "LocationsGrid";
             this.LocationsGrid.RowTemplate.Height = 25;
-            this.LocationsGrid.Size = new System.Drawing.Size(1272, 436);
+            this.LocationsGrid.Size = new System.Drawing.Size(1272, 424);
             this.LocationsGrid.TabIndex = 15;
             // 
             // locationDataGridViewTextBoxColumn
@@ -425,6 +439,7 @@
             // SearchPanel
             // 
             this.SearchPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.SearchPanel.Controls.Add(this.ClearBoxes);
             this.SearchPanel.Controls.Add(this.Street);
             this.SearchPanel.Controls.Add(this.StreetTextBox);
             this.SearchPanel.Controls.Add(this.Numberlb);
@@ -434,11 +449,25 @@
             this.SearchPanel.Size = new System.Drawing.Size(1302, 41);
             this.SearchPanel.TabIndex = 16;
             // 
+            // ClearBoxes
+            // 
+            this.ClearBoxes.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.ClearBoxes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearBoxes.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ClearBoxes.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.ClearBoxes.Location = new System.Drawing.Point(1140, 2);
+            this.ClearBoxes.Name = "ClearBoxes";
+            this.ClearBoxes.Size = new System.Drawing.Size(111, 38);
+            this.ClearBoxes.TabIndex = 19;
+            this.ClearBoxes.Text = "Clear";
+            this.ClearBoxes.UseVisualStyleBackColor = false;
+            this.ClearBoxes.Click += new System.EventHandler(this.ClearBoxes_Click);
+            // 
             // Street
             // 
             this.Street.AutoSize = true;
             this.Street.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Street.Location = new System.Drawing.Point(707, 6);
+            this.Street.Location = new System.Drawing.Point(640, 6);
             this.Street.Name = "Street";
             this.Street.Size = new System.Drawing.Size(64, 25);
             this.Street.TabIndex = 18;
@@ -447,7 +476,7 @@
             // StreetTextBox
             // 
             this.StreetTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.StreetTextBox.Location = new System.Drawing.Point(776, 3);
+            this.StreetTextBox.Location = new System.Drawing.Point(709, 3);
             this.StreetTextBox.Name = "StreetTextBox";
             this.StreetTextBox.Size = new System.Drawing.Size(400, 33);
             this.StreetTextBox.TabIndex = 17;
@@ -457,7 +486,7 @@
             // 
             this.Numberlb.AutoSize = true;
             this.Numberlb.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Numberlb.Location = new System.Drawing.Point(126, 6);
+            this.Numberlb.Location = new System.Drawing.Point(59, 6);
             this.Numberlb.Name = "Numberlb";
             this.Numberlb.Size = new System.Drawing.Size(161, 25);
             this.Numberlb.TabIndex = 16;
@@ -466,7 +495,7 @@
             // NumberTextBox
             // 
             this.NumberTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NumberTextBox.Location = new System.Drawing.Point(289, 3);
+            this.NumberTextBox.Location = new System.Drawing.Point(222, 3);
             this.NumberTextBox.Name = "NumberTextBox";
             this.NumberTextBox.Size = new System.Drawing.Size(400, 33);
             this.NumberTextBox.TabIndex = 15;
@@ -497,10 +526,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.addressModelBindingSource2)).EndInit();
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SMFRLogo)).EndInit();
             this.Footer.ResumeLayout(false);
             this.Footer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SMFRLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ITLogobox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressModelBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LocationsGrid)).EndInit();
@@ -536,7 +566,6 @@
         private System.Windows.Forms.BindingSource addressModelBindingSource2;
         private System.Windows.Forms.Panel Header;
         private System.Windows.Forms.Label Title;
-        private System.Windows.Forms.PictureBox SMFRLogo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.Label LocationsFound;
         private System.Windows.Forms.Label ItemsNumber;
@@ -583,5 +612,8 @@
         private System.Windows.Forms.TextBox StreetTextBox;
         private System.Windows.Forms.Label Numberlb;
         private System.Windows.Forms.TextBox NumberTextBox;
+        private System.Windows.Forms.Button ClearBoxes;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox SMFRLogo;
     }
 }
