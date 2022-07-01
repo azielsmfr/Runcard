@@ -49,10 +49,7 @@ namespace RunCard.Classes
         {
             try
             {
-                // string connectionString = ConfigurationManager.ConnectionStrings[id].ConnectionString;
-
-               
-
+                //string connectionString = ConfigurationManager.ConnectionStrings[id].ConnectionString;     
                 //string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
                 string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);

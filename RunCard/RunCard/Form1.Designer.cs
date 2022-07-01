@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Runcard));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.addressModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.addressModelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.addressModelBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
@@ -61,6 +62,13 @@
             this.ITLogobox = new System.Windows.Forms.PictureBox();
             this.addressModelBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.LocationsGrid = new System.Windows.Forms.DataGridView();
+            this.addressModelBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.SearchPanel = new System.Windows.Forms.Panel();
+            this.ClearBoxes = new System.Windows.Forms.Button();
+            this.Street = new System.Windows.Forms.Label();
+            this.StreetTextBox = new System.Windows.Forms.TextBox();
+            this.Numberlb = new System.Windows.Forms.Label();
+            this.NumberTextBox = new System.Windows.Forms.TextBox();
             this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,13 +85,6 @@
             this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressModelBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            this.SearchPanel = new System.Windows.Forms.Panel();
-            this.ClearBoxes = new System.Windows.Forms.Button();
-            this.Street = new System.Windows.Forms.Label();
-            this.StreetTextBox = new System.Windows.Forms.TextBox();
-            this.Numberlb = new System.Windows.Forms.Label();
-            this.NumberTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.addressModelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressModelBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressModelBindingSource2)).BeginInit();
@@ -307,6 +308,8 @@
             // 
             // LocationsGrid
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.LocationsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.LocationsGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -336,11 +339,81 @@
             this.LocationsGrid.Size = new System.Drawing.Size(1272, 424);
             this.LocationsGrid.TabIndex = 15;
             // 
+            // addressModelBindingSource4
+            // 
+            this.addressModelBindingSource4.DataSource = typeof(RunCard.Classes.AddressModel);
+            // 
+            // SearchPanel
+            // 
+            this.SearchPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.SearchPanel.Controls.Add(this.ClearBoxes);
+            this.SearchPanel.Controls.Add(this.Street);
+            this.SearchPanel.Controls.Add(this.StreetTextBox);
+            this.SearchPanel.Controls.Add(this.Numberlb);
+            this.SearchPanel.Controls.Add(this.NumberTextBox);
+            this.SearchPanel.Location = new System.Drawing.Point(12, 154);
+            this.SearchPanel.Name = "SearchPanel";
+            this.SearchPanel.Size = new System.Drawing.Size(1302, 41);
+            this.SearchPanel.TabIndex = 16;
+            // 
+            // ClearBoxes
+            // 
+            this.ClearBoxes.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.ClearBoxes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearBoxes.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ClearBoxes.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.ClearBoxes.Location = new System.Drawing.Point(1140, 2);
+            this.ClearBoxes.Name = "ClearBoxes";
+            this.ClearBoxes.Size = new System.Drawing.Size(111, 38);
+            this.ClearBoxes.TabIndex = 19;
+            this.ClearBoxes.Text = "Clear";
+            this.ClearBoxes.UseVisualStyleBackColor = false;
+            this.ClearBoxes.Click += new System.EventHandler(this.ClearBoxes_Click);
+            // 
+            // Street
+            // 
+            this.Street.AutoSize = true;
+            this.Street.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Street.Location = new System.Drawing.Point(640, 6);
+            this.Street.Name = "Street";
+            this.Street.Size = new System.Drawing.Size(64, 25);
+            this.Street.TabIndex = 18;
+            this.Street.Text = "Street:";
+            // 
+            // StreetTextBox
+            // 
+            this.StreetTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.StreetTextBox.Location = new System.Drawing.Point(709, 3);
+            this.StreetTextBox.Name = "StreetTextBox";
+            this.StreetTextBox.Size = new System.Drawing.Size(400, 33);
+            this.StreetTextBox.TabIndex = 17;
+            this.StreetTextBox.TextChanged += new System.EventHandler(this.StreetTextBox_TextChanged);
+            // 
+            // Numberlb
+            // 
+            this.Numberlb.AutoSize = true;
+            this.Numberlb.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Numberlb.Location = new System.Drawing.Point(59, 6);
+            this.Numberlb.Name = "Numberlb";
+            this.Numberlb.Size = new System.Drawing.Size(161, 25);
+            this.Numberlb.TabIndex = 16;
+            this.Numberlb.Text = "Number or Street:";
+            // 
+            // NumberTextBox
+            // 
+            this.NumberTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NumberTextBox.Location = new System.Drawing.Point(222, 3);
+            this.NumberTextBox.Name = "NumberTextBox";
+            this.NumberTextBox.Size = new System.Drawing.Size(400, 33);
+            this.NumberTextBox.TabIndex = 15;
+            this.NumberTextBox.TextChanged += new System.EventHandler(this.NumberTextBox_TextChanged);
+            // 
             // locationDataGridViewTextBoxColumn
             // 
             this.locationDataGridViewTextBoxColumn.DataPropertyName = "Location";
             this.locationDataGridViewTextBoxColumn.HeaderText = "Location";
             this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
+            this.locationDataGridViewTextBoxColumn.Width = 290;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -432,75 +505,6 @@
             this.dataGridViewTextBoxColumn31.HeaderText = "Station10";
             this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
             // 
-            // addressModelBindingSource4
-            // 
-            this.addressModelBindingSource4.DataSource = typeof(RunCard.Classes.AddressModel);
-            // 
-            // SearchPanel
-            // 
-            this.SearchPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.SearchPanel.Controls.Add(this.ClearBoxes);
-            this.SearchPanel.Controls.Add(this.Street);
-            this.SearchPanel.Controls.Add(this.StreetTextBox);
-            this.SearchPanel.Controls.Add(this.Numberlb);
-            this.SearchPanel.Controls.Add(this.NumberTextBox);
-            this.SearchPanel.Location = new System.Drawing.Point(12, 154);
-            this.SearchPanel.Name = "SearchPanel";
-            this.SearchPanel.Size = new System.Drawing.Size(1302, 41);
-            this.SearchPanel.TabIndex = 16;
-            // 
-            // ClearBoxes
-            // 
-            this.ClearBoxes.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClearBoxes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClearBoxes.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ClearBoxes.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.ClearBoxes.Location = new System.Drawing.Point(1140, 2);
-            this.ClearBoxes.Name = "ClearBoxes";
-            this.ClearBoxes.Size = new System.Drawing.Size(111, 38);
-            this.ClearBoxes.TabIndex = 19;
-            this.ClearBoxes.Text = "Clear";
-            this.ClearBoxes.UseVisualStyleBackColor = false;
-            this.ClearBoxes.Click += new System.EventHandler(this.ClearBoxes_Click);
-            // 
-            // Street
-            // 
-            this.Street.AutoSize = true;
-            this.Street.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Street.Location = new System.Drawing.Point(640, 6);
-            this.Street.Name = "Street";
-            this.Street.Size = new System.Drawing.Size(64, 25);
-            this.Street.TabIndex = 18;
-            this.Street.Text = "Street:";
-            // 
-            // StreetTextBox
-            // 
-            this.StreetTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.StreetTextBox.Location = new System.Drawing.Point(709, 3);
-            this.StreetTextBox.Name = "StreetTextBox";
-            this.StreetTextBox.Size = new System.Drawing.Size(400, 33);
-            this.StreetTextBox.TabIndex = 17;
-            this.StreetTextBox.TextChanged += new System.EventHandler(this.StreetTextBox_TextChanged);
-            // 
-            // Numberlb
-            // 
-            this.Numberlb.AutoSize = true;
-            this.Numberlb.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Numberlb.Location = new System.Drawing.Point(59, 6);
-            this.Numberlb.Name = "Numberlb";
-            this.Numberlb.Size = new System.Drawing.Size(161, 25);
-            this.Numberlb.TabIndex = 16;
-            this.Numberlb.Text = "Number or Street:";
-            // 
-            // NumberTextBox
-            // 
-            this.NumberTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NumberTextBox.Location = new System.Drawing.Point(222, 3);
-            this.NumberTextBox.Name = "NumberTextBox";
-            this.NumberTextBox.Size = new System.Drawing.Size(400, 33);
-            this.NumberTextBox.TabIndex = 15;
-            this.NumberTextBox.TextChanged += new System.EventHandler(this.NumberTextBox_TextChanged);
-            // 
             // Runcard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -589,6 +593,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.BindingSource addressModelBindingSource3;
         private System.Windows.Forms.DataGridView LocationsGrid;
+        private System.Windows.Forms.BindingSource addressModelBindingSource4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel SearchPanel;
+        private System.Windows.Forms.Label Street;
+        private System.Windows.Forms.TextBox StreetTextBox;
+        private System.Windows.Forms.Label Numberlb;
+        private System.Windows.Forms.TextBox NumberTextBox;
+        private System.Windows.Forms.Button ClearBoxes;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox SMFRLogo;
         private System.Windows.Forms.DataGridViewTextBoxColumn locationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
@@ -605,15 +619,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
-        private System.Windows.Forms.BindingSource addressModelBindingSource4;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel SearchPanel;
-        private System.Windows.Forms.Label Street;
-        private System.Windows.Forms.TextBox StreetTextBox;
-        private System.Windows.Forms.Label Numberlb;
-        private System.Windows.Forms.TextBox NumberTextBox;
-        private System.Windows.Forms.Button ClearBoxes;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox SMFRLogo;
     }
 }

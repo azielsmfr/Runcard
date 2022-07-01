@@ -109,7 +109,7 @@ namespace RunCard
         private void CenterTopControl(Control ctrlToCenter)
         {
             ctrlToCenter.Left = (ctrlToCenter.Parent.Width - ctrlToCenter.Width) / 2;
-            ctrlToCenter.Top = 5;
+            ctrlToCenter.Top = 15;
         }
 
         private void CenterBottomControl(Control ctrlToCenter)
